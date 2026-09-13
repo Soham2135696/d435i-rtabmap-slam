@@ -205,7 +205,7 @@ so that every new run starts with a fresh mapping database.
 ## 📁 Project Structure
 
 ```
-quad2/
+depth/
 │
 ├── config/
 │   ├── controllers.yaml
@@ -234,13 +234,13 @@ quad2/
 │   ├── leg42.stl
 │   └── leg43.stl
 │
-├── quad2/
+├── depth/
 │   ├── cal_servo.py
 │   ├── esp.py
 │   └── fwd.py
 │
 ├── resource/
-│   └── quad2
+│   └── depth
 │
 ├── urdf/
 │   ├── model.config
@@ -298,8 +298,8 @@ The main ROS 2 dependencies are:
 ### 1. Create a ROS 2 workspace
 
 ```bash
-mkdir -p ~/Quadraf/src
-cd ~/Quadraf/src
+mkdir -p ~/depth_mapping/src
+cd ~/depth_mapping/src
 ```
 
 ### 2. Clone the repository
@@ -326,7 +326,7 @@ sudo apt install \
 ### 4. Build the workspace
 
 ```bash
-cd ~/Quadraf
+cd ~/depth_mapping
 colcon build --symlink-install
 ```
 
@@ -345,11 +345,11 @@ The simulation currently uses three terminals.
 ### Terminal 1 — Gazebo
 
 ```bash
-cd ~/Quadraf
+cd ~/depth_mapping
 
 source install/setup.bash
 
-ros2 launch quad2 2_gazebo.launch.py
+ros2 launch depth 2_gazebo.launch.py
 ```
 
 This starts:
@@ -367,11 +367,11 @@ The robot will spawn inside the maze environment.
 ### Terminal 2 — RTAB-Map
 
 ```bash
-cd ~/Quadraf
+cd ~/depth_mapping
 
 source install/setup.bash
 
-ros2 launch quad2 rtabmap.launch.py
+ros2 launch depth rtabmap.launch.py
 ```
 
 This launches RTAB-Map and connects it to the simulated RGB-D camera and robot odometry.
