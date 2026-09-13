@@ -235,9 +235,7 @@ depth/
 │   └── leg43.stl
 │
 ├── depth/
-│   ├── cal_servo.py
-│   ├── esp.py
-│   └── fwd.py
+│   ├── _init_.py
 │
 ├── resource/
 │   └── depth
